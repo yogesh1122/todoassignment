@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
+    <script>
+      addEventListener(
+        "load",
+        function () {
+          setTimeout(hideURLbar, 0);
+        },
+        false
+      );
+
+      function hideURLbar() {
+        window.scrollTo(0, 1);
+      }
+    </script>
+
+    <!--//booststrap end-->
+    <!-- font-awesome icons -->
+    <link
+      href="css/fontawesome-all.min.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <!-- //font-awesome icons -->
+    <!--gallery-->
+    <link rel="stylesheet" type="text/css" href="css/set1.css" />
+    <!--//gallery-->
+    <!--lightbox slider-->
+    <link rel="stylesheet" href="css/lightbox.css" />
+    <!-- lightbox slider-->
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!--//stylesheets-->
+    <link
+      href="//fonts.googleapis.com/css?family=Montserrat:300,400,500"
+      rel="stylesheet"
+    />
+    <link
+      href="//fonts.googleapis.com/css?family=Encode+Sans+Condensed:400,500,600,700"
+      rel="stylesheet"
+    />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+
+    <script src="js/jquery-2.2.3.min.js"></script>
+    <!--//js working-->
+    <!--  light box js -->
+    <script src="js/lightbox-plus-jquery.min.js"></script>
+    <!-- //light box js-->
+    <!--responsiveslides banner-->
+    <script src="js/responsiveslides.min.js"></script>
+    <script>
+      // You can also use "$(window).load(function() {"
+      $(function () {
+        // Slideshow 4
+        $("#slider4").responsiveSlides({
+          auto: true,
+          pager: false,
+          nav: true,
+          speed: 900,
+          namespace: "callbacks",
+          before: function () {
+            $(".events").append("<li>before event fired.</li>");
+          },
+          after: function () {
+            $(".events").append("<li>after event fired.</li>");
+          },
+        });
+      });
+    </script>
+    <!--// responsiveslides banner-->
+    <!--navbar-->
+    <script>
+      (function ($) {
+        // Menu Functions
+        $(document).ready(function () {
+          $("#menuToggle").click(function (e) {
+            var $parent = $(this).parent(".menu");
+            $parent.toggleClass("open");
+            var navState = $parent.hasClass("open") ? "hide" : "show";
+            $(this).attr("title", navState + " navigation");
+            // Set the timeout to the animation length in the CSS.
+            setTimeout(function () {
+              console.log("timeout set");
+              $("#menuToggle > span")
+                .toggleClass("navClosed")
+                .toggleClass("navOpen");
+            }, 200);
+            e.preventDefault();
+          });
+        });
+      })(jQuery);
+    </script>
+    <!--About OnScroll-Number-Increase-JavaScript -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.countup.js"></script>
+    <script>
+      $(".counter").countUp();
+    </script>
+    <!-- //OnScroll-Number-Increase-JavaScript -->
+    <!-- start-smoth-scrolling -->
+    <script src="js/move-top.js"></script>
+    <script src="js/easing.js"></script>
+    <script>
+      jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+          event.preventDefault();
+          $("html,body").animate(
+            {
+              scrollTop: $(this.hash).offset().top,
+            },
+            900
+          );
+        });
+      });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!-- here stars scrolling icon -->
+    <script>
+      $(document).ready(function () {
+        var defaults = {
+          containerID: "toTop", // fading element id
+          containerHoverID: "toTopHover", // fading element hover id
+          scrollSpeed: 1200,
+          easingType: "linear",
+        };
+
+        $().UItoTop({
+          easingType: "easeOutQuart",
+        });
+      });
+    </script>
+    <!-- //here ends scrolling icon -->
+    <!--bootstrap working-->
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
